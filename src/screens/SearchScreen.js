@@ -24,7 +24,7 @@ const SearchScreen = () => {
         onChangeTerm={setSearchTerm}
         onTermSubmit={() => searchApi(searchTerm)}
       />
-      {errorMsg ? <Text>{errorMsg}</Text> : null}
+      {errorMsg ? <Text style={styles.textStyle2}>{errorMsg}</Text> : null}
       <ScrollView>
         <ResultList result={filterResultsByPrice("$")} title="Cost Effective" />
         <ResultList result={filterResultsByPrice("$$")} title="Bit Pricier" />
@@ -38,6 +38,10 @@ const SearchScreen = () => {
 const styles = StyleSheet.create({
   textStyle: {
     marginHorizontal: 10,
+  },
+  textStyle2: {
+    color: "red",
+    fontStyle: "italic",
   },
 });
 
